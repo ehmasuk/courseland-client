@@ -17,10 +17,10 @@ export async function middleware(request) {
 
 
 
-    if (token) {
-        user = await useFetch("/api/users/me",token)
-        isAdmin = user?.isAdmin;
-    }
+    // if (token) {
+    //     user = await useFetch("/api/users/me",token)
+    //     isAdmin = user?.isAdmin;
+    // }
 
     if (isLogedin && logoutUsersCanSee) {
         return NextResponse.redirect(new URL("/", request.url));
