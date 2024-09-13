@@ -5,7 +5,8 @@ import Link from "next/link";
 import HeaderMenuItems from "./HeaderMenuItems";
 
 async function Header() {
-    const userMe = await useFetch("/api/users/me", cookies().get("token")?.value);
+    // const userMe = await useFetch("/api/users/me", cookies().get("token")?.value);
+    const userMe = null
 
     return (
         <header className="header">
