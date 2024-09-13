@@ -4,7 +4,8 @@ import { useFetch } from "@/hooks/useFetch";
 import { cookies } from "next/headers";
 
 async function ProfilePage() {
-    const data = await useFetch('/api/users/me',cookies().get('token')?.value)
+    // const data = await useFetch('/api/users/me',cookies().get('token')?.value)
+    const data = {}
 
     return (
         <div className="">
