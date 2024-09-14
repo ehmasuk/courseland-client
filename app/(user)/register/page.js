@@ -8,7 +8,9 @@ import Link from "next/link";
 function Register() {
     const handleSubmit = async (values) => {
         try {
-            await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/register", values,{ withCredentials: true } );
+            await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/register", values,{ 
+                withCredentials: true,
+            } );
             message.success("Login successful");
             window.location.reload();
         } catch (error) {
