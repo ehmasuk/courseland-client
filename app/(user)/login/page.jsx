@@ -9,9 +9,6 @@ function LoginPage() {
         try {
             await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/login", values, { 
                 withCredentials: true,
-                headers: {
-                    token: "Bearer "
-                },
             } );
             message.success("Login successful");
             // window.location.reload();
