@@ -7,7 +7,12 @@ import Link from "next/link";
 function LoginPage() {
     const onFinish = async (values) => {
         try {
-            await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/login", values );
+            await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/login", values, { 
+                withCredentials: true,
+                headers: {
+                    token: "Bearer "
+                },
+            } );
             message.success("Login successful");
             // window.location.reload();
         } catch (error) {
