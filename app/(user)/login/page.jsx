@@ -1,24 +1,17 @@
 "use client";
 
-
-import useFetchPost from "@/hooks/useFetchPost";
 import { Button, Form, message } from "antd";
+import axios from "axios";
 import Link from "next/link";
 
 function LoginPage() {
-    const { postData, loading } = useFetchPost();
     const onFinish = async (values) => {
-        postData(
-            "/api/users/login",
-            values,
-            () => {
-                message.success("Login successful");
-                window.location.reload();
-            },
-            (err) => {
-                message.error(err);
-            }
-        );
+        try {
+            await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/login", values);
+            message.success("Login successful");
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -78,11 +71,11 @@ function LoginPage() {
                                         Forgot password?
                                     </a>
                                 </div>
-                                <Button htmlType="submit" loading={loading} type="primary" className="w-full">
-                                Sign in
+                                <Button htmlType="submit" type="primary" className="w-full">
+                                    Sign in
                                 </Button>
                                 <p className="text-sm">
-                                    Don’t have an account yet? 
+                                    Don’t have an account yet?
                                     <Link href="/register" className="font-medium text-blue-600 hover:underline dark:text-blue-500">
                                         Sign up
                                     </Link>

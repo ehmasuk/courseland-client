@@ -52,7 +52,7 @@ function HeaderMenuItems() {
                 )}
 
                 <div onClick={() => dispatch(openSideCart())} className="menu-icon relative cursor-pointer">
-                    <div class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-500 border-2 border-white rounded-full -top-2 -end-2 ">
+                    <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-500 border-2 border-white rounded-full -top-2 -end-2 ">
                         {cartItems?.length}
                     </div>
                     <div className="bg-blue-100 h-8 w-10 rounded flex items-center justify-center">

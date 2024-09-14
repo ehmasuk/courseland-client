@@ -53,12 +53,12 @@ function AddCourse({ categories }) {
                         </FormItem>
                     </div>
                     <div>
-                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Description
                         </label>
 
                         <FormItem name="description">
-                            <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300" placeholder="Description..."></textarea>
+                            <textarea rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300" placeholder="Description..."></textarea>
                         </FormItem>
                     </div>
                 </div>

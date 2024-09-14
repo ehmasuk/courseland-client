@@ -1,26 +1,19 @@
 "use client";
 
-import useFetchPost from "@/hooks/useFetchPost";
 import { Button, Form, message } from "antd";
 import FormItem from "antd/es/form/FormItem";
+import axios from "axios";
 import Link from "next/link";
 
 function Register() {
-    const { postData,loading } = useFetchPost();
-
     const handleSubmit = async (values) => {
-        postData(
-            "/api/users/register",
-            values,
-            () => {
-                message.success("Successfully registered");
-                window.location.reload();
-            },
-            (err) => {
-                console.log(err);
-                message.error(err);
-            }
-        );
+        try {
+            await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/users/register", values);
+            message.success("Login successful");
+            window.location.reload();
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -69,7 +62,7 @@ function Register() {
                                     </FormItem>
                                 </div>
 
-                                <Button htmlType="submit" loading={loading} type="primary" className="w-full">
+                                <Button htmlType="submit" type="primary" className="w-full">
                                     Create an account
                                 </Button>
                                 <div className="text-sm  text-gray-800">

@@ -57,8 +57,8 @@ async function CoursDetails({ params }) {
                     <div className="max-w-6xl mx-auto">
                         <div className="max-w-3xl">
                             {/* what you will learn section */}
-                            <section class="what-learn-section">
-                                <h3 class="description-common-title">What youll learn</h3>
+                            <section className="what-learn-section">
+                                <h3 className="description-common-title">What youll learn</h3>
                                 <ul>
                                     <li>Dinner sign bark range made someone manner bet half dark lying wrote ago good strength day noted arrow week market space terrible sea practice</li>
                                     <li>Office carried get political old press active gulf team speed nor than speak feet cast combination stage safety bottle simply pilot drop largest provide</li>
@@ -74,6 +74,7 @@ async function CoursDetails({ params }) {
                                     <li>Guess whole buried vertical our brother choice save farther stopped do soon stove cap sum ill forest milk successful angry through proper six shorter</li>
                                 </ul>
                             </section>
+
                             {/* tab section */}
                             <section className="crurses-drawer-section">
                                 <h3 className="description-common-title">Course content</h3>

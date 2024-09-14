@@ -9,7 +9,11 @@ function useFetchPost() {
     const postData = async (url, data, onSuccess, onError) => {
         setLoading(true);
         try {
-            const res = await fetch(url, { method: "POST", body: JSON.stringify(data) });
+            const res = await fetch(process.env.NEXT_PUBLIC_API_URL + url, {
+                method: "POST",
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify(data),
+            });
             data = await res.json();
             if (!res.ok) {
                 throw new Error(data.message);
